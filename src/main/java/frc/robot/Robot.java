@@ -23,8 +23,8 @@ public class Robot extends TimedRobot {
 
   private RobotContainer m_robotContainer;
 
-  private PneumaticHub ph;
-  private DoubleSolenoid ds;
+  // private PneumaticHub ph;
+  // private DoubleSolenoid ds;
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -35,8 +35,8 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
-    ph = new PneumaticHub(1);
-    ds = new DoubleSolenoid(1, PneumaticsModuleType.REVPH, 0, 1);
+    // ph = new PneumaticHub(1);
+    // ds = new DoubleSolenoid(1, PneumaticsModuleType.REVPH, 0, 1);
   }
 
   /**
@@ -65,12 +65,12 @@ public class Robot extends TimedRobot {
   /** This autonomous runs the autonomous command selected by your {@link RobotContainer} class. */
   @Override
   public void autonomousInit() {
-    m_autonomousCommand = m_robotContainer.getAutonomousCommand();
+  //   m_autonomousCommand = m_robotContainer.getAutonomousCommand();
 
-    // schedule the autonomous command (example)
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.schedule();
-    }
+  //   // schedule the autonomous command (example)
+  //   if (m_autonomousCommand != null) {
+  //     m_autonomousCommand.schedule();
+  //   }
   }
 
   /** This function is called periodically during autonomous. */
@@ -86,8 +86,8 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
-    ph.enableCompressorDigital();
-    ds.set(Value.kReverse);
+    // ph.enableCompressorDigital();
+    // ds.set(Value.kReverse);
   }
 
   /** This function is called periodically during operator control. */
