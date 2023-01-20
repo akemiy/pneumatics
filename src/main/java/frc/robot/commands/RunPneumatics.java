@@ -7,15 +7,21 @@ public class RunPneumatics extends CommandBase {
   public RunPneumatics(Pneumatics p) {
     this.p = p;
     addRequirements(p);
+    System.out.println("commandCreated :)");
   }
 
   @Override
   public void execute() {
+    System.out.println("command");
     p.runPneumatics();
   }
 
   @Override
   public void end(boolean interrupted) {
     p.stop();
+  }
+
+  public boolean isFinished() {
+    return true;
   }
 }

@@ -48,7 +48,7 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {
-    runPneumaticsButton.whileTrue(new RunPneumatics(p));
+    runPneumaticsButton.onTrue(new RunPneumatics(p));
   }
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
     // new Trigger(m_exampleSubsystem::exampleCondition)

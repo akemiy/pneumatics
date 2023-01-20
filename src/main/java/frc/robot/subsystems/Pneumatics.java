@@ -9,6 +9,8 @@ public class Pneumatics extends SubsystemBase {
   private PneumaticHub pH;
   private DoubleSolenoid dS;
 
+  private boolean extended = false;
+
   public Pneumatics(){
     pH = new PneumaticHub(1);
     dS = new DoubleSolenoid(1, PneumaticsModuleType.REVPH, 0, 1);
@@ -17,10 +19,12 @@ public class Pneumatics extends SubsystemBase {
   }
 
   public void runPneumatics(){
-    dS.toggle();
+    System.out.println("subsystem");
+    extended = !extended;
+    dS.set((extended) ? Value.kForward : Value.kReverse);
   }
 
   public void stop(){
-    dS.set(Value.kOff);
+    //dS.set(Value.kOff);
   }
 }
